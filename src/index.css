@@ -1,1 +1,472 @@
 
+#root {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0 auto; /* Removes any margins */
+  padding: 0; /* Removes any padding */
+  width: 100vw; /* Takes up 100% of the viewport width */
+  height: 100vh; /* Optional: Takes up 100% of the viewport height */
+  overflow-x: hidden;
+}
+
+body,
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+  height: 100%; /* Ensure body and HTML take up full height */
+  overflow: auto; /* Make sure scrolling is allowed */
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%; /* Or try using rem units for consistency */
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  background-color: var(--theme2-light);
+  color: var(--theme1-dark);
+}
+body {
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+}
+/* Styles for Section, Article, Aside, and other semantic containers */
+section,
+article,
+aside,
+main {
+  font-size: 18px; /* Same font size as the paragraph for consistency */
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 2rem; /* Increased margin for more breathing room between sections */
+  margin: 0 auto;
+  text-align: left;
+  max-width: 1000px; /* Wider sections to hold more content comfortably */
+  padding: 1.5rem; /* Extra padding to differentiate section containers */
+  background-color: var(
+    --theme3-light
+  ); /* Light background to maintain readability */
+  border-radius: 10px; /* Slightly larger border-radius for softer containers */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* More pronounced shadow for a subtle pop */
+  transition: all 0.3s ease-in-out;
+
+  /* Additional styling to differentiate containers */
+  border-left: 1px solid var(--theme2-dark); /* Bolder left border for containers */
+  padding-left: 0.5rem; /* More padding for the section's internal content */
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+.container {
+  min-height: 100vh;
+  margin: 0 auto; /* Center the container */
+  padding: 1.2rem; /* Padding around the container */
+  padding: 1rem;
+}
+
+.full-width-container {
+  width: 100%;
+  max-width: 100%; /* Ensures it takes the full width even with constraints */
+  box-sizing: border-box; /* Makes sure padding is included in the element’s width */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  gap: 20px; /* Space between items */
+}
+
+/* Main section styling for a prominent effect */
+main {
+  background-color: var(
+    --theme3-light
+  ); /* Neutral background for main content */
+  padding: 2rem;
+  max-width: 1200px; /* Wider layout for main content */
+}
+
+/* Specific to articles for extra differentiation */
+article {
+  border-left: 10px solid var(--theme2-primary); /* Extra bold border for articles */
+  padding-left: 2.5rem; /* Spacious padding for content readability */
+}
+
+/* Aside, for smaller side content */
+aside {
+  background-color: var(--theme2-light); /* Light variant for aside */
+  border-left: 5px solid var(--theme2-dark); /* Slightly different accent border */
+  padding-left: 1.5rem;
+  max-width: 400px; /* More constrained width for side content */
+}
+
+blockquote {
+  margin: 1.5rem 0; /* Space around the blockquote */
+  padding: 1.5rem; /* Padding inside the blockquote */
+  border-left: 4px solid var(--theme6-light); /* Green left border for emphasis */
+  font-style: italic; /* Italic text for style */
+  font-size: 1.2em; /* Slightly larger text */
+  color: var(--theme1-dark);
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  position: relative; /* For positioning the pseudo-element */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+blockquote footer {
+  margin-top: 1rem; /* Space above the footer */
+  text-align: right; /* Align text to the right */
+  font-weight: bold; /* Bold for the author */
+}
+/* Definition List Styling */
+dl {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--theme3-light); /* Pale Mint */
+  border-left: 4px solid var(--theme3-dark); /* Seafoam left border */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+dt {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--theme1-dark); /* Muted Forest */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase; /* Modern touch */
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.3s ease-in-out; /* Subtle hover animation */
+}
+
+dt:hover {
+  color: var(--theme2-dark); /* Olive Green */
+}
+
+dd {
+  margin: 0;
+  padding: 0.1rem 0 0.5rem 1.2rem; /* Adjusted padding */
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--theme1-dark); /* Muted Forest */
+  border-bottom: 1px solid var(--theme6-light); /* Light Sand separator */
+  transition: background-color 0.3s ease-in-out;
+}
+
+dd:last-of-type {
+  border-bottom: none; /* Remove bottom border on the last item */
+}
+
+dd:hover {
+  background-color: var(--theme4-light); /* Pale Peach */
+  border-left: 3px solid var(--theme4-dark); /* Siege Green border on hover */
+}
+
+/* Optional: Animation for modern feel */
+dl {
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reset default styles for unordered and ordered lists */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style-position: inside; /* Keeps bullet points or numbers inside the container */
+  padding-left: 1.5rem; /* Adds some padding on the left for a neat look */
+  margin: 0; /* Removes default margin */
+  overflow: hidden; /* Prevents content from overflowing the container */
+}
+
+/* Styles for list items */
+li {
+  margin-bottom: 0.5rem; /* Adds space between items */
+  padding: 0.25rem 0; /* Adds padding for touch target and aesthetics */
+  font-size: 1em; /* Ensure font size is consistent with body text */
+  line-height: 1.5; /* Adequate spacing for readability */
+  color: var(--theme1-dark); /* Uses your dark theme color for consistency */
+}
+
+/* Optional: Differentiate ordered lists */
+ol {
+  counter-reset: list-counter; /* Resetting counter for ordered list */
+}
+
+ol li {
+  counter-increment: list-counter; /* Increments the counter for each item */
+  position: relative; /* For absolute positioning if needed */
+}
+
+ol li::before {
+  content: counter(list-counter) ". "; /* Add a period after the counter */
+  position: absolute; /* Positioning the counter */
+  left: -2rem; /* Positioning left to avoid overlap */
+  color: var(
+    --theme2-primary
+  ); /* Give a distinctive color for ordered list numbers */
+}
+.underline {
+  text-decoration: underline;
+  color: var(--theme3-contrast);
+  width: 0;
+  height: 2px;
+  font-weight: 600;
+  left: 0;
+  bottom: -3px; /* Adjust based on the space below text */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+}
+.strong {
+  font-weight: 800; /* Super bold for extra emphasis */
+  color: var(--theme3-light); /* Maintain color consistency */
+  position: relative; /* Needed for effects like before/after pseudo-elements */
+  display: inline-block; /* Ensures the element can scale and animate cleanly */
+  margin: 0 0.5rem;
+
+  /* Underline Effect with Animation */
+  overflow: hidden; /* Ensures the underline animation is smooth */
+  letter-spacing: 0.1em; /* Adds a sleek touch to text spacing */
+  transition: color 0.3s ease-in-out; /* Smooth color transition */
+
+  /* Optional, adds flair with text transformation */
+  text-transform: uppercase;
+}
+
+.strong::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Thickness of the animated underline */
+  background-color: var(
+    --theme3-highlight
+  ); /* Different color for the underline */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out; /* Smooth reveal animation */
+}
+
+.strong:hover::before {
+  transform: scaleX(0.1); /* Reveals the underline on hover */
+}
+
+.strong:hover {
+  color: var(--theme3-highlight); /* Changes text color on hover */
+}
+.centered {
+    text-align: center; /* Centered text for consistency */
+}
+/* Common styles for all headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0; /* Vertical spacing around headers */
+}
+
+/* Heading 1 */
+h1.dark,
+h1.light {
+  font-size: 2.5em; /* Slightly smaller for better harmony with paragraphs */
+  line-height: 1.3; /* Space between lines of text */
+  font-weight: 700; /* Strong font-weight for emphasis */
+}
+
+h1.dark {
+  color: var(--theme1-dark);
+  text-shadow: 1px 1px 3px var(--theme3-light); /* Subtle shadow */
+}
+
+h1.light {
+  color: var(--theme1-light);
+}
+
+/* Heading 2 */
+h2.dark,
+h2.light {
+  font-size: 2em; /* Smaller than h1, still bold */
+  line-height: 1.4; /* Adjusted for readability */
+}
+
+h2.dark {
+  color: var(--theme2-dark);
+}
+
+h2.light {
+  color: var(--theme2-light);
+}
+
+/* Heading 3 */
+h3.dark,
+h3.light {
+  font-size: 1.75em; /* Stepping down size for h3 */
+  line-height: 1.5;
+}
+
+h3.dark {
+  color: var(--theme2-dark);
+}
+
+h3.light {
+  color: var(--theme3-light);
+}
+
+/* Heading 4 */
+h4.dark,
+h4.light {
+  font-size: 1.5em; /* Smaller size for h4 */
+  line-height: 1.5;
+}
+
+h4.dark {
+  color: var(--theme2-dark);
+}
+
+h4.light {
+  color: var(--theme4-light);
+}
+
+/* Heading 5 */
+h5.dark,
+h5.light {
+  font-size: 1.25em; /* Further reduction for h5 */
+  line-height: 1.6;
+}
+
+h5.dark {
+  color: var(--theme2-dark);
+}
+
+h5.light {
+  color: var(--theme5-light);
+}
+
+/* Heading 6 */
+h6.dark,
+h6.light {
+  font-size: 1em; /* Smallest heading size */
+  line-height: 1.6;
+}
+
+h6.dark {
+  color: var(--theme2-dark);
+}
+
+h6.light {
+  color: var(--theme6-light);
+}
+
+/* Base anchor styles */
+a {
+  text-decoration: none; /* Removing default underline */
+  font-weight: 500; /* Medium weight for readability */
+  cursor: pointer; /* Ensures the user knows it's clickable */
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover effects */
+}
+
+/* Light theme anchor */
+a.light {
+  color: var(--theme5-light);
+  border-bottom: 2px solid transparent; /* Underline effect on hover */
+}
+
+a.light:hover,
+a.light:focus {
+  color: var(--theme2-light); /* Highlight color change on hover */
+  border-bottom: 2px solid var(--theme2-light); /* Show underline on hover */
+  text-shadow: 1px 1px 2px var(--theme2-dark); /* Subtle shadow for emphasis */
+}
+
+/* Dark theme anchor */
+a.dark {
+  color: var(--theme5-dark);
+  border-bottom: 2px solid transparent; /* Underline effect on hover */
+}
+
+a.dark:hover,
+a.dark:focus {
+  color: var(--theme2-dark); /* Highlight color change on hover */
+  border-bottom: 2px solid var(--theme2-dark); /* Show underline on hover */
+  text-shadow: 1px 1px 2px var(--theme3-dark); /* Subtle shadow for emphasis */
+}
+
+/* Visited link styles */
+a.light:visited {
+  color: var(--theme3-light); /* Slightly muted for visited links */
+}
+
+a.dark:visited {
+  color: var(--theme3-light);
+}
+
+/* Active state for when links are clicked */
+a.light:active {
+  color: var(--theme1-light); /* Brief change during click */
+  border-bottom: 2px solid var(--theme1-light);
+}
+
+a.dark:active {
+  color: var(--theme1-dark); /* Brief change during click */
+  border-bottom: 2px solid var(--theme1-dark);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    width: 100vw;
+  };
+  section,
+  article,
+  aside,
+  main {
+    padding: 1rem;
+    max-width: 90vh; 
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  aside {
+    max-width: 100%; /* Expand asides to full width on smaller screens */
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0rem 0; /* Remove vertical spacing around headers */
+    padding: 0 1rem; /* Add horizontal padding for breathing space */
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+    word-wrap: break-word; /* Legacy support for word wrapping */
+    white-space: normal; /* Allow text to wrap onto the next line */
+  }
+  dd, dl, blockquote {
+    margin: 0;
+    padding: 0.1rem 0 0.5rem 1.2rem; /* Adjusted padding */
+    font-size: 0.8em;
+    line-height: 1.4;
+    color: var(--theme1-dark); /* Muted Forest */
+    border-bottom: 1px solid var(--theme6-light); /* Light Sand separator */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+}
