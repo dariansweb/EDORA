@@ -59,4 +59,14 @@ Our goal is to partner with agencies and communities to create a service deliver
 🌐 Learn more at [edoracases.com](#)  
 ✉️ Have questions? Reach out to us at [support@edoracases.com](mailto:support@edoracases.com)
 
----
+## MIT License
+
+Copyright © 2024 Darians GH
+
+Permission is granted, free of charge, to anyone who gets a copy of this software and its accompanying documentation (collectively, the "Software") to use, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. Go ahead—do your thing with it!
+
+The one condition: the copyright notice and this permission note must stick around in all copies or significant parts of the Software.
+
+The Software is provided "as is," with absolutely no warranty—express, implied, or otherwise. That means no guarantees of functionality, compatibility, or anything else. **Use it at your own risk!** The authors or copyright holders won’t be responsible for any issues, claims, damages, or other liabilities, whether they arise from a contract, tort, or something else, connected to the Software or its use.
+
+**So there you have it—enjoy and make something amazing!**
