@@ -1,5 +1,7 @@
 # Database Setup with `setupDatabase.js`
 
+npm install better-sqlite3
+
 ## **Introduction**
 This project includes an automated database setup script (`setupDatabase.js`) designed to execute SQL files in order, ensuring your database schema and seed data are consistently applied. While the current implementation is tailored for SQLite, the approach can be adapted for other relational databases like PostgreSQL or MySQL with minimal changes.
 
@@ -11,6 +13,10 @@ The `setupDatabase.js` script:
 2. Executes each file in numerical order (e.g., `0-ClientsTable.sql`, `1-NeedsTable.sql`).
 3. Ensures schema and relationships are created without dependency issues (e.g., foreign keys).
 4. Provides sample seed data to quickly bootstrap your database for testing and development.
+
+**Important Note**:  
+- Running the `setupDatabase.js` script will **delete all existing tables** and reseed the database to its initial state.  
+- This means all existing data will be lost and replaced with the predefined schema and seed data in the SQL files. Use this script with caution in environments where data persistence is required.
 
 ---
 
@@ -29,4 +35,3 @@ database/
 ├── automation/              # Placeholder for advanced automation tools
 └── README.MD                # Documentation for this directory
 setupDatabase.js             # The script that automates database setup
-
